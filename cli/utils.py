@@ -277,6 +277,7 @@ def select_llm_provider() -> tuple[str, str | None]:
         ("MiniMax", "minimax", "https://api.minimax.io/v1"),
         ("OpenRouter", "openrouter", "https://openrouter.ai/api/v1"),
         ("Azure OpenAI", "azure", None),
+        ("AWS Bedrock", "bedrock", None),
         ("Ollama", "ollama", ollama_url),
     ]
 

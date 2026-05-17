@@ -30,6 +30,11 @@ PROVIDER_API_KEY_ENV: dict[str, Optional[str]] = {
     "minimax":    "MINIMAX_API_KEY",
     "minimax-cn": "MINIMAX_CN_API_KEY",
     "openrouter": "OPENROUTER_API_KEY",
+    # AWS Bedrock: any of the standard boto3 credential sources works
+    # (AWS_BEARER_TOKEN_BEDROCK, AWS_ACCESS_KEY_ID/SECRET, IAM role,
+    # ~/.aws/credentials). We surface the bearer-token var here because
+    # it's the simplest and what the CLI prompts for.
+    "bedrock":    "AWS_BEARER_TOKEN_BEDROCK",
     # Local runtimes do not authenticate.
     "ollama":     None,
 }

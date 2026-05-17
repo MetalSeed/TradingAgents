@@ -153,6 +153,24 @@ MODEL_OPTIONS: ProviderModeOptions = {
     # so the two provider keys share one model list.
     "minimax": _MINIMAX_MODELS,
     "minimax-cn": _MINIMAX_MODELS,
+    # AWS Bedrock — Anthropic Claude models hosted on Bedrock. Model IDs
+    # use the cross-region inference profile prefix (us./eu./apac.) so
+    # Bedrock auto-routes within your region. Adjust the prefix if you
+    # operate outside the US.
+    "bedrock": {
+        "quick": [
+            ("Claude Sonnet 4.5 (Bedrock) - Fast, strong reasoning", "us.anthropic.claude-sonnet-4-5-20250929-v1:0"),
+            ("Claude Haiku 4.5 (Bedrock) - Fastest, near-frontier", "us.anthropic.claude-haiku-4-5-20251001-v1:0"),
+            ("Claude 3.7 Sonnet (Bedrock)", "us.anthropic.claude-3-7-sonnet-20250219-v1:0"),
+            ("Custom model ID", "custom"),
+        ],
+        "deep": [
+            ("Claude Opus 4.1 (Bedrock) - Frontier, deep reasoning", "us.anthropic.claude-opus-4-1-20250805-v1:0"),
+            ("Claude Sonnet 4.5 (Bedrock) - Fast, strong reasoning", "us.anthropic.claude-sonnet-4-5-20250929-v1:0"),
+            ("Claude Opus 4 (Bedrock)", "us.anthropic.claude-opus-4-20250514-v1:0"),
+            ("Custom model ID", "custom"),
+        ],
+    },
     # OpenRouter: fetched dynamically. Azure: any deployed model name.
     # Ollama display labels intentionally omit a "local" marker — the
     # endpoint is now configurable via OLLAMA_BASE_URL, so the same labels
